@@ -3,7 +3,7 @@ import { data } from "../data/module-data";
 
 function Lab1Page() {
   return (
-    <main>
+    <>
       <h1>Laboratorium 1</h1>
       <h3>Lista imion</h3>
       <div className="flex-wrap d-flex gap-2 justify-content-center">
@@ -11,7 +11,7 @@ function Lab1Page() {
           <PersonalInfo key={i} {...o}></PersonalInfo>
         ))}
       </div>
-    </main>
+    </>
   );
 }
 

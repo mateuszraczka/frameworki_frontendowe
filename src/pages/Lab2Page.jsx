@@ -15,20 +15,19 @@ function Lab2() {
   }
 
   return (
-    <main>
-      <div className=" d-flex justify-content-center">
-        {errorMessage != "" ? (
-          <h2>{errorMessage}</h2>
-        ) : (
-          <PersonalInfo
-            id={personData.id}
-            eyes={personData.eyes}
-            birth={personData.birth}
-            name={personData.name}
-          ></PersonalInfo>
-        )}
-      </div>
-    </main>
+    <div className=" d-flex justify-content-center">
+      {errorMessage != "" ? (
+        <h2>{errorMessage}</h2>
+      ) : (
+        <PersonalInfo
+          id={personData.id}
+          eyes={personData.eyes}
+          birth={personData.birth}
+          name={personData.name}
+          rating={personData.rating}
+        ></PersonalInfo>
+      )}
+    </div>
   );
 }
 

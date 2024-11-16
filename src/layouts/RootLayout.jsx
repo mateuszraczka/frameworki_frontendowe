@@ -5,9 +5,9 @@ function RootLayout({ items, children }) {
   return (
     <div className="d-flex flex-column gap-4 min-vh-100">
       <NavBarMenu items={items}></NavBarMenu>
-      <div className="p-3">
+      <main className="p-3">
         {children}
-      </div>
+      </main>
       <Footer></Footer>
     </div>
   );
