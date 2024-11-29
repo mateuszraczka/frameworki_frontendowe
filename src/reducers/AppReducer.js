@@ -2,22 +2,27 @@ export default function AppReducer(state, action) {
   switch (action.type) {
     case "rate": {
       console.log("Rate action");
-      const item = state.find((item) => item.id === action.id);
-      item.rating = action.rating;
-      return [...state];
+      return state.map((item) =>
+        item.id === action.id
+          ? { ...item, rating: action.rating }
+          : item
+      );
     }
     case "edit": {
       console.log("Edit action");
-      const itemIndex = state.findIndex((item) => item.id === action.id);
-      if (itemIndex !== -1) {
-        state[itemIndex] = { ...state[itemIndex], ...action.newData };
-      }
-      return [...state];
+      return state.map((item) =>
+        item.id === action.id
+          ? { ...item, ...action.newData }
+          : item
+      );
     }
     case "delete": {
       console.log("Delete action");
-      const newState = state.filter((item) => item.id !== action.id);
-      return [...newState];
+      return state.filter((item) => item.id !== action.id);
+    }
+    case "add": {
+      console.log("Add action");
+      return [...state, action.data];
     }
     default:
       return state;

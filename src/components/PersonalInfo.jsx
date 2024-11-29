@@ -1,11 +1,13 @@
 import Card from "react-bootstrap/Card";
 import RatingBar from "./RatingBar";
 import { ButtonGroup, Button } from "react-bootstrap";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import EditPersonalInfo from "./EditPersonalInfo";
+import AppContext from "../contexts/AppContext";
 
-function PersonalInfo({ id, name, birth, eyes, rating, dispatch }) {
+function PersonalInfo({ id, name, birth, eyes, rating }) {
   const [isEdit, setIsEdit] = useState(false);
+  const {dispatch} = useContext(AppContext);
 
   const handleEdit = () => {
     setIsEdit(true);
